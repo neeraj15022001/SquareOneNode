@@ -6,4 +6,5 @@ const authController = controllers.authController
 /* GET home page. */
 router.get('/', homeController.home);
 router.use('/login',authController.login)
+router.use('/register',authController.register)
 module.exports = router;

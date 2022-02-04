@@ -1,0 +1,21 @@
+<section class="h-screen flex">
+    <div class="flex-1 flex items-center justify-center flex-col">
+        <p class="text-5xl font-black text-gray-700 text-center capitalize py-5">let's make your</p>
+        <p class="text-5xl font-black text-gray-700 text-center capitalize mb-16">order</p>
+        <form action="/users/create-session" method="post" class="flex flex-col w-1/2">
+            <input type="email" name="email"
+                   class="mb-6 px-3 py-5 border-b text-2xl outline-0 focus:border-red-600 focus:border-b-2"
+                   placeholder="Enter Your Email">
+            <input type="password" name="password"
+                   class="mb-8 px-3 py-5 border-b text-2xl outline-0 focus:border-red-600 focus:border-b-2"
+                   placeholder="Enter Your Password">
+            <input type="submit" value="Login"
+                   class="py-3 font-bold px-8 rounded-full bg-red-600 text-white capitalize transition hover:bg-red-700 mb-5">
+            <span class="capitalize text-gray-500 text-center">don't have an account? <a href="/register"
+                                                                                         class="font-bold text-red-600 hover:underline">register here</a></span>
+        </form>
+    </div>
+    <div class="flex-1 bg-gray-700"
+         style="background:url('/images/login.jpg') no-repeat; background-size: cover;">
+    </div>
+</section>

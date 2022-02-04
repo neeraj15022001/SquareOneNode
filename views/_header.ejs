@@ -7,6 +7,7 @@
     </span>
     </div>
     <div class="w-5/6 flex items-center justify-end z-10">
+        <%if(locals.user) {%>
         <ul class="flex items-center">
             <li class="text-white capitalize mr-6">
                 <a href="/cart" class="hover:underline">cart</a>
@@ -18,5 +19,6 @@
                 <a href="#" class="text-white px-8 py-3 bg-red-600 capitalize font-bold rounded-full hover:bg-red-700">sign out</a>
             </li>
         </ul>
+        <%}%>
     </div>
 </nav>

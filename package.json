@@ -1,0 +1,26 @@
+{
+  "name": "untitled",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npm run tailwind:css && nodemon ./bin/www",
+    "tailwind:css": "postcss public/stylesheets/tailwind.css -o public/stylesheets/tailwind_use.css"
+  },
+  "dependencies": {
+    "@gompa/node-sass-middleware": "^0.12.0",
+    "autoprefixer": "^10.4.2",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "express-ejs-layouts": "^2.5.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.15",
+    "postcss": "^8.4.6",
+    "postcss-cli": "^9.1.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.0.18"
+  }
+}

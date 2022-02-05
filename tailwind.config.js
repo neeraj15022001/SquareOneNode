@@ -1,7 +1,8 @@
 module.exports = {
-  content: ['./views/*.ejs'],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
+    content: ['./views/*.ejs'],
+    darkMode: 'media',
+    theme: {
+        extend: {},
+    },
+    plugins: [],
 }

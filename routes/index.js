@@ -10,4 +10,5 @@ router.get('/login', authController.login)
 router.get('/register', authController.register)
 router.get('/menu', menuController.menu)
 router.get('/recharge', homeController.recharge)
+router.use('/users', require("./users"))
 module.exports = router;

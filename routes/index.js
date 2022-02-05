@@ -9,4 +9,5 @@ router.get('/', homeController.home);
 router.get('/login', authController.login)
 router.get('/register', authController.register)
 router.get('/menu', menuController.menu)
+router.get('/recharge', homeController.recharge)
 module.exports = router;

@@ -7,7 +7,7 @@ var sassMiddleware = require('@gompa/node-sass-middleware');
 var expressLayouts = require('express-ejs-layouts');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
+var db = require("./config/mongoose")
 var app = express();
 
 // view engine setup

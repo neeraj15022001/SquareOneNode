@@ -4,8 +4,9 @@ const controllers = require("../controllers");
 const homeController = controllers.homeController;
 const authController = controllers.authController;
 const menuController = controllers.menuController;
-/* GET home page. */
-router.get('/', homeController.home);
+var middlewares = require("../config/middlewares")
+
+router.get('/', middlewares.checkUser, homeController.home);
 router.get('/login', authController.login)
 router.get('/register', authController.register)
 router.get('/menu', menuController.menu)

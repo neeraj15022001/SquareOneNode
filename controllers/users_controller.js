@@ -23,7 +23,7 @@ module.exports.createSession = async (req, res) => {
             return res.redirect('back')
         }
         console.log("Successfully found user", userFromDB);
-        res.cookie('squareOne', JSON.stringify(userFromDB));
+        // res.cookie('squareOne', JSON.stringify(userFromDB));
         return res.redirect("/");
     } catch (e) {
         console.log("Error while finding user", e);

@@ -30,3 +30,8 @@ module.exports.createSession = async (req, res) => {
         return;
     }
 }
+
+module.exports.destroySession = (req, res) => {
+    req.logout();
+    return res.redirect("/login");
+}

@@ -26,10 +26,12 @@
                 <p class="text-lg capitalize font-bold text-gray-700">indian</p>
             </div>
         </div>
-        <div class="flex-1 flex items-center justify-stretch">
-            <a href="#"
-               class="capitalize font-bold py-3 px-8 rounded-full bg-red-600 text-white transition hover:bg-red-700">add
-                to cart</a>
-        </div>
+        <% if(locals.user) { %>
+            <div class="flex-1 flex items-center justify-stretch">
+                <a href="#"
+                   class="capitalize font-bold py-3 px-8 rounded-full bg-red-600 text-white transition hover:bg-red-700">add
+                    to cart</a>
+            </div>
+        <% } %>
     </div>
 </div>

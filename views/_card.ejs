@@ -1,29 +1,33 @@
-<div class="p-5 w-56 bg-gray-200 rounded-lg my-10 pb-8 mr-8 flex-shrink-0 relative">
-    <div>
-        <img src="/images/Items/aloo-parantha.png" class="absolute left-0 right-0 -top-24" alt="aloo-parantha">
+<div class="p-5 w-56 bg-gray-200 dark:bg-gray-400 rounded-lg my-10 pb-8 mr-8 flex-shrink-0">
+    <div class="relative w-full h-12 flex items-center justify-center">
+        <img src="<%= item.image %>" class="absolute -top-20 w-fit h-36" alt="<%= item.name %>">
     </div>
     <div class="py-5 border-gray-700 border-b capitalize text-center">
-        <p class="text-lg font-bold text-gray-700">aloo prantha</p>
+        <p class="text-lg font-bold text-gray-700"><%= item.name %></p>
     </div>
     <div class="flex flex-col pt-5">
         <div class="flex-1 flex items-center">
             <div class="flex-1">
                 <p class="text-sm capitalize text-gray-500">price</p>
-                <p class="text-lg capitalize font-bold text-gray-700">rs 30</p>
+                <p class="text-lg capitalize font-bold text-gray-700">Rs <%= item.price %></p>
             </div>
             <div class="flex-1">
                 <p class="text-sm capitalize text-gray-500">portion</p>
-                <p class="text-lg capitalize font-bold text-gray-700">1 person</p>
+                <p class="text-lg capitalize font-bold text-gray-700"><%= item.portion %> person</p>
             </div>
         </div>
         <div class="flex-1 flex items-center py-4">
             <div class="flex-1">
                 <p class="text-sm capitalize text-gray-500">food type</p>
-                <p class="text-lg capitalize text-green-600 font-bold text-gray-700">veg</p>
+                <% if(item.foodType.toLowerCase() === 'veg') { %>
+                    <p class="text-lg capitalize font-bold text-green-600"><%= item.foodType %></p>
+                <% } else { %>
+                    <p class="text-lg capitalize font-bold text-red-600"><%= item.foodType %></p>
+                <%}%>
             </div>
             <div class="flex-1">
                 <p class="text-sm capitalize text-gray-500">food style</p>
-                <p class="text-lg capitalize font-bold text-gray-700">indian</p>
+                <p class="text-lg capitalize font-bold text-gray-700"><%= item.foodStyle %></p>
             </div>
         </div>
         <% if(locals.user) { %>

@@ -50,10 +50,12 @@ app.use(sassMiddleware({
     indentedSyntax: true, // true = .sass and false = .scss
     sourceMap: true
 }));
+app.use("/uploads", express.static(__dirname + "/uploads"))
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(expressLayouts);
 app.use(passport.setAuthenticatedUser)
 app.use(logger('dev'));
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

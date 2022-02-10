@@ -5,7 +5,8 @@
             variety of food items</p>
     </section>
     <section class="pb-10">
-        <p class="capitalize text-6xl font-black text-gray-800 dark:text-gray-400 mb-14"><span class="text-red-600 px-5">indian</span>Food
+        <p class="capitalize text-6xl font-black text-gray-800 dark:text-gray-400 mb-14"><span
+                    class="text-red-600 px-5">indian</span>Food
         </p>
         <div class="flex items-center">
             <div class="w-12 relative">
@@ -14,12 +15,11 @@
                 </button>
             </div>
             <div class="flex-1 flex items-center justify-start overflow-auto pt-10">
-                <%- include("_card") %>
-                <%- include("_card") %>
-                <%- include("_card") %>
-                <%- include("_card") %>
-                <%- include("_card") %>
-                <%- include("_card") %>
+                <% if(locals.items.food) { %>
+                    <% locals.items.food.map(item => { %>
+                        <%- include("_card", {item: item}) %>
+                    <% }) %>
+                <% } %>
             </div>
             <div class="w-12 relative">
                 <button class="h-10 w-10 bg-red-600 rounded-full text-white shadow-lg absolute right-0 top-1/2 hover:bg-red-700">
@@ -38,12 +38,11 @@
                 </button>
             </div>
             <div class="flex-1 flex items-center justify-start overflow-auto pt-10">
-                <%- include("_card") %>
-                <%- include("_card") %>
-                <%- include("_card") %>
-                <%- include("_card") %>
-                <%- include("_card") %>
-                <%- include("_card") %>
+                <% if(locals.items.beverage) { %>
+                    <% locals.items.beverage.map(item => { %>
+                        <%- include("_card", {item: item}) %>
+                    <% }) %>
+                <% } %>
             </div>
             <div class="w-12 relative">
                 <button class="h-10 w-10 bg-red-600 rounded-full text-white shadow-lg absolute right-0 top-1/2 hover:bg-red-700">

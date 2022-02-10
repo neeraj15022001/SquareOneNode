@@ -1,21 +1,39 @@
-<section class="h-screen dark:bg-gray-900 p-5">
-    <p class="text-white dark:text-gray-400 text-4xl mt-5 font-bold">Admin Panel</p>
-    <section class="flex items-center justify-center">
-        <form action="/items/create" method="post" enctype="multipart/form-data" class="border flex flex-col">
-            <input type="file" name="image">
-            <input type="text" name="name" placeholder="Enter Item Name" class="border" required>
-            <input type="number" name="price" placeholder="Enter Item Price" class="border" required>
-            <input type="number" name="portion" placeholder="Enter item portion" class="border" required>
-            <select name="foodType" class="border" required>
+<section class="h-screen dark:bg-gray-900 flex">
+    <section class="flex flex-col justify-center p-5 flex-1">
+        <p class="capitalize text-6xl font-black text-gray-800 dark:text-gray-400 mb-10"><span
+                    class="text-red-600">add</span> item
+        </p>
+        <form action="/items/create" method="post" enctype="multipart/form-data" class="flex flex-col">
+            <input type="file" name="image"
+                   class="mb-3 text-gray-400">
+            <input type="text" name="name" placeholder="Enter Item Name"
+                   class="border-b-2 focus:border-red-600 px-3 py-2 outline-none mb-4 bg-transparent dark:text-gray-400" required>
+            <input type="number" name="price" placeholder="Enter Item Price"
+                   class="border-b-2 focus:border-red-600 px-3 py-2 outline-none mb-4 bg-transparent dark:text-gray-400" required>
+            <input type="number" name="portion" placeholder="Enter item portion"
+                   class="border-b-2 focus:border-red-600 px-3 py-2 outline-none mb-4 bg-transparent dark:text-gray-400" required>
+            <select name="foodType" class="border-b-2 focus:border-red-600 px-1 py-2 outline-none mb-4 bg-transparent dark:text-gray-400" required>
+                <option value="Select Food Type" disabled selected>Select Food Type</option>
                 <option value="veg">Veg</option>
                 <option value="non-veg">Non-Veg</option>
             </select>
-            <select name="foodStyle" class="border">
+            <select name="foodStyle" class="border-b-2 focus:border-red-600 px-1 py-2 outline-none mb-4 bg-transparent dark:text-gray-400">
+                <option value="Select Food Style" disabled selected>Select Food Style</option>
                 <option value="indian">Indian</option>
                 <option value="italian">Italian</option>
                 <option value="chinese">Chinese</option>
             </select>
-            <input type="submit" value="Create" class="bg-blue-600 text-white ">
+            <p class="dark:text-gray-400 my-4">Select Food Category</p>
+            <div class="flex items-center justify-start mb-5">
+                <input type="radio" name="category" id="food" value="food" class="border-none outline-0" required>
+                <label for="food" class="dark:text-gray-400 ml-3">Food</label><br>
+                <input type="radio" name="category" id="beverage" value="beverage" class="ml-5 mr-3" required>
+                <label for="beverage" class="dark:text-gray-400">Beverage</label><br>
+            </div>
+            <input type="submit" value="Create"
+                   class="mt-5 capitalize font-bold py-3 px-8 rounded-full bg-red-600 text-white transition hover:bg-red-700">
         </form>
     </section>
+    <section class="flex-1 bg-red-600"
+             style="background: url('/images/admin.jpg') no-repeat; background-size: cover; background-position:center;"></section>
 </section>

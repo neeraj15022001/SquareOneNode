@@ -1,1 +1,17 @@
-<h1>Cart</h1>
+<section class="min-h-screen dark:bg-gray-900 dark:text-gray-400 p-5">
+    <p class="text-8xl font-black capitalize text-center text-gray-800 pt-3 pb-10 dark:text-gray-400">Cart</p>
+    <section class="flex">
+        <section style="flex: 2" class="border-r px-5">
+            <%-include("_cart-card")%>
+            <%-include("_cart-card")%>
+            <%-include("_cart-card")%>
+            <%-include("_cart-card")%>
+            <%-include("_cart-card")%>
+            <%-include("_cart-card")%>
+            <%-include("_cart-card")%>
+        </section>
+        <section style="flex: 1" class="px-5">
+            <%-include("_receipt")%>
+        </section>
+    </section>
+</section>

@@ -1,0 +1,21 @@
+<section class="h-screen dark:bg-gray-900 p-5">
+    <p class="text-white dark:text-gray-400 text-4xl mt-5 font-bold">Admin Panel</p>
+    <section class="flex items-center justify-center">
+        <form action="/items/create" method="post" enctype="multipart/form-data" class="border flex flex-col">
+            <input type="file" name="image">
+            <input type="text" name="name" placeholder="Enter Item Name" class="border" required>
+            <input type="number" name="price" placeholder="Enter Item Price" class="border" required>
+            <input type="number" name="portion" placeholder="Enter item portion" class="border" required>
+            <select name="foodType" class="border" required>
+                <option value="veg">Veg</option>
+                <option value="non-veg">Non-Veg</option>
+            </select>
+            <select name="foodStyle" class="border">
+                <option value="indian">Indian</option>
+                <option value="italian">Italian</option>
+                <option value="chinese">Chinese</option>
+            </select>
+            <input type="submit" value="Create" class="bg-blue-600 text-white ">
+        </form>
+    </section>
+</section>

@@ -14,7 +14,7 @@ passport.use(new LocalStrategy({usernameField: "email", passReqToCallback: true}
             if (user.password !== password) {
                 return done(null, false);
             }
-            console.log("Got User", user);
+            // console.log("Got User", user);
             return done(null, user);
         });
     }
@@ -22,25 +22,25 @@ passport.use(new LocalStrategy({usernameField: "email", passReqToCallback: true}
 
 //serialising user to decide which key to be kept in cookie
 passport.serializeUser(function (user, done) {
-    console.log("serializing users")
+    // console.log("serializing users")
     done(null, user.id);
 })
 //deserializing the user from the key in the cookies
 passport.deserializeUser(function (id, done) {
-    console.log("Deserializing User");
-    console.log("deserializing user")
+    // console.log("Deserializing User");
+    // console.log("deserializing user")
     User.findById(id, function (err, user) {
         if (err) {
             console.log("Error in finding user", err);
             return done(err);
         }
-        console.log("Got User", user);
+        // console.log("Got User", user);
         return done(null, user);
     })
 })
 
 passport.checkAuthentication = function (req, res, next) {
-    console.log("Checking Authneticated User", req.isAuthenticated())
+    // console.log("Checking Authneticated User", req.isAuthenticated())
     if (req.isAuthenticated()) {
         return next();
     }
@@ -48,7 +48,7 @@ passport.checkAuthentication = function (req, res, next) {
 }
 
 passport.setAuthenticatedUser = function (req, res, next) {
-    console.log("Set Authenticated User", req.isAuthenticated())
+    // console.log("Set Authenticated User", req.isAuthenticated())
     if (req.isAuthenticated()) {
         res.locals.user = req.user
     }

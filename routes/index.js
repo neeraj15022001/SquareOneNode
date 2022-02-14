@@ -10,7 +10,7 @@ router.get('/login', authController.login);
 router.get('/register', authController.register);
 router.get('/menu', menuController.menu);
 router.get('/recharge', homeController.recharge);
-router.get("/cart", homeController.cart);
+router.use("/cart", require("./cart"));
 router.get("/admin", homeController.admin);
 router.get("/signOut", userController.destroySession);
 router.use('/users', require("./users"));

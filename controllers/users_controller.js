@@ -14,7 +14,8 @@ module.exports.createUser = async (req, res) => {
                 let userCreated = await User.create({
                     name: user.name,
                     email: user.email,
-                    password: user.password
+                    password: user.password,
+                    cartItems: []
                 });
                 if (userCreated) {
                     console.log("User created succesfully", userCreated)

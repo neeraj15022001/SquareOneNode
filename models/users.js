@@ -13,13 +13,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    cartItems: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "cart"
-        }
-
-    ]
+    cartItems: [{
+        item: {type: mongoose.Schema.Types.ObjectId, ref: "items"},
+        quantity: mongoose.Schema.Types.Number
+    }]
 }, {
     timestamps: true
 })

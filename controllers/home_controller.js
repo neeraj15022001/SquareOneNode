@@ -1,4 +1,5 @@
 const Admin = require("../models/admin")
+const User = require("../models/users")
 module.exports.home = (req, res) => {
     if (!req.isAuthenticated()) {
         return res.redirect("/login");
@@ -11,10 +12,23 @@ module.exports.recharge = (req, res) => {
     }
     return res.render('recharge', {title: "Square One | Recharge"});
 }
-module.exports.cart = (req, res) => {
+module.exports.cart = async (req, res) => {
     if (!req.isAuthenticated()) {
         return res.redirect("/login");
     }
+    try {
+        console.log(req.user.id)
+        let user = User.findById(req.user.id).populate('cartItems.item').exec((err, data) => {
+            if (err) {
+                return;
+            }
+            console.log(data);
+        })
+        console.log("user from cart", user)
+    } catch (e) {
+        return;
+    }
+    // console.log(req.user.cartItems)
     return res.render("cart", {title: "Square One | Cart"});
 }
 module.exports.profile = (req, res) => {

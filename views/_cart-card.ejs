@@ -7,13 +7,17 @@
     </div>
     <div class="flex items-center">
         <div class="flex items-center">
-            <div class="bg-red-600 hover:bg-red-700 font-bold text-xl rounded-full h-8 w-8 flex items-center justify-center text-white">
-                -
-            </div>
+            <a href="/cart/decrement?id=<%= locals.item._id %>">
+                <div class="bg-red-600 hover:bg-red-700 font-bold text-xl rounded-full h-8 w-8 flex items-center justify-center text-white">
+                    -
+                </div>
+            </a>
             <div class="flex-1 mx-3 text-2xl font-bold text-gray-800 dark:text-gray-400"><%= locals.quantity %></div>
-            <div class="bg-red-600 hover:bg-red-700 font-bold text-xl rounded-full h-8 w-8 flex items-center justify-center text-white">
-                +
-            </div>
+            <a href="/cart/increment?id=<%= locals.item._id %>">
+                <div class="bg-red-600 hover:bg-red-700 font-bold text-xl rounded-full h-8 w-8 flex items-center justify-center text-white">
+                    +
+                </div>
+            </a>
         </div>
     </div>
 </div>

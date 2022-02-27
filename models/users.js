@@ -16,7 +16,15 @@ const userSchema = new mongoose.Schema({
     cartItems: [{
         item: {type: mongoose.Schema.Types.ObjectId, ref: "items"},
         quantity: mongoose.Schema.Types.Number
-    }]
+    }],
+    totalCartValue: {
+        type: mongoose.Schema.Types.Number,
+        required: true
+    },
+    totalCartItems: {
+        type: mongoose.Schema.Types.Number,
+        required: true
+    }
 }, {
     timestamps: true
 })

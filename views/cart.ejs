@@ -2,13 +2,13 @@
     <p class="text-8xl font-black capitalize text-center text-gray-800 pt-3 pb-10 dark:text-gray-400">Cart</p>
     <section class="flex">
         <section style="flex: 2" class="border-r px-5">
-            <%console.log(locals.item)%>
-            <%locals.item.forEach(item => {%>
-                <%- include("_cart-card", {item:item.item, quantity: item.quantity})%>
-            <%})%>
+            <% console.log(locals.item) %>
+            <% locals.item.forEach(item => { %>
+                <%- include("_cart-card", {item: item.item, quantity: item.quantity}) %>
+            <% }) %>
         </section>
         <section style="flex: 1" class="px-5">
-            <%-include("_receipt")%>
+            <%- include("_receipt", {totalCartValue: locals.totalCartValue, totalCartItems: locals.totalCartItems}) %>
         </section>
     </section>
 </section>

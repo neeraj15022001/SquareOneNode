@@ -17,13 +17,17 @@ module.exports.cart = async (req, res) => {
         return res.redirect("/login");
     }
     try {
-        console.log(req.user.id)
         try {
             await User.findById(req.user.id).populate('cartItems.item').exec((err, data) => {
                 if (err) {
                     return;
                 }
-                return res.render("cart", {title: "Square One | Cart", item: data.cartItems});
+                return res.render("cart", {
+                    title: "Square One | Cart",
+                    item: data.cartItems,
+                    totalCartValue: data.totalCartValue,
+                    totalCartItems: data.totalCartItems
+                });
             })
         } catch (e) {
             return res.redirect('back')

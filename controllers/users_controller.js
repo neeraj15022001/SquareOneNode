@@ -15,10 +15,12 @@ module.exports.createUser = async (req, res) => {
                     name: user.name,
                     email: user.email,
                     password: user.password,
-                    cartItems: []
+                    cartItems: [],
+                    totalCartValue: 0,
+                    totalCartItems: 0
                 });
                 if (userCreated) {
-                    console.log("User created succesfully", userCreated)
+                    console.log("User created successfully", userCreated)
                     return res.redirect("/")
                 }
             } catch (e) {
@@ -50,5 +52,6 @@ module.exports.createSession = async (req, res) => {
 
 module.exports.destroySession = (req, res) => {
     req.logout();
+    req.session.destroy()
     return res.redirect("/login");
 }

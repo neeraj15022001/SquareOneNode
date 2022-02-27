@@ -1,5 +1,6 @@
 <div>
-    <p class="text-4xl capitalize text-center text-gray-800 font-bold dark:text-gray-400 py-5 border-b"><span class="text-red-600">order</span> summary</p>
+    <p class="text-4xl capitalize text-center text-gray-800 font-bold dark:text-gray-400 py-5 border-b"><span
+                class="text-red-600">order</span> summary</p>
     <div class="py-5 border-b">
         <table class="table-auto w-full">
             <thead>
@@ -12,14 +13,15 @@
             <tbody>
             <tr>
                 <td class="capitalize font-bold text-gray-800 dark:text-gray-400">quantity</td>
-                <td class="capitalize text-center dark:text-gray-400 text-gray-800">4</td>
-                <td class="capitalize text-center dark:text-gray-400 text-gray-800">rs 130</td>
+                <td class="capitalize text-center dark:text-gray-400 text-gray-800"><%= locals.totalCartItems %></td>
+                <td class="capitalize text-center dark:text-gray-400 text-gray-800">Rs <%= locals.totalCartValue %></td>
             </tr>
             </tbody>
         </table>
     </div>
     <div class="flex py-5">
         <div class="capitalize flex-1 text-2xl text-red-600 font-bold">bag total</div>
-        <div class="flex-1 text-right capitalize pr-10 text-2xl font-bold text-gray-800 dark:text-gray-400">rs 230</div>
+        <div class="flex-1 text-right capitalize pr-10 text-2xl font-bold text-gray-800 dark:text-gray-400">
+            Rs <%= locals.totalCartValue %></div>
     </div>
 </div>

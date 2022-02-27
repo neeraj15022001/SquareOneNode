@@ -5,4 +5,6 @@ const homeController = controllers.homeController;
 const cartController = controllers.cartController;
 router.get("/", homeController.cart);
 router.get("/add", cartController.add);
+router.get("/increment", cartController.increment);
+router.get("/decrement", cartController.decrement);
 module.exports = router;

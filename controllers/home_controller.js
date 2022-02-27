@@ -18,18 +18,19 @@ module.exports.cart = async (req, res) => {
     }
     try {
         console.log(req.user.id)
-        let user = User.findById(req.user.id).populate('cartItems.item').exec((err, data) => {
-            if (err) {
-                return;
-            }
-            console.log(data);
-        })
-        console.log("user from cart", user)
+        try {
+            await User.findById(req.user.id).populate('cartItems.item').exec((err, data) => {
+                if (err) {
+                    return;
+                }
+                return res.render("cart", {title: "Square One | Cart", item: data.cartItems});
+            })
+        } catch (e) {
+            return res.redirect('back')
+        }
     } catch (e) {
-        return;
+        return res.redirect('back')
     }
-    // console.log(req.user.cartItems)
-    return res.render("cart", {title: "Square One | Cart"});
 }
 module.exports.profile = (req, res) => {
     if (!req.isAuthenticated()) {
